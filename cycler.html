@@ -73,6 +73,16 @@
 		}
 
 	}
+
+	function swap() {
+		 let firstNum = Math.floor(Math.random() * document.getElementsByClassName('cycler'))
+		 let secondNum = Math.floor(Math.random() * document.getElementsByClassName('cycler'))
+		 if (document.getElementsByClassName('cycler').length > 1) {
+		    let temp = document.getElementsByClassName("cycler")[firstNum].innerHTML
+			document.getElementsByClassName("cycler")[firstNum].innerHTML = document.getElementsByClassName
+			document.getElementsByClassName("cycler")[secondNum].innerHTML = temp
+		}	
+	}
 </script>
 
 </html>
