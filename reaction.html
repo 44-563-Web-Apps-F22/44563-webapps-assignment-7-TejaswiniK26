@@ -35,10 +35,11 @@
     }
 
     function startTime() {
-      for (let index = 0; index < 4; index++) {
+      let countdown = Math.floor(Math.random() * 9) + 2
+      for (let index = 0; index < countdown; index++) {
         setTimeout(() => {
           document.getElementById('countdown').innerHTML = index
-        }, (3 - index) * 1000)
+        }, ((countdown-1-index) * 1000));
 
       }
 
