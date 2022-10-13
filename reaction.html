@@ -35,26 +35,27 @@
     }
 
     function startTime() {
-      let countdown = Math.floor(Math.random() * 9) + 2
-      for (let index = 0; index < countdown; index++) {
-        setTimeout(() => {
-          document.getElementById('countdown').innerHTML = index
-        }, ((countdown-1-index) * 1000));
+            randomCountdown = getRandomInt(2, 10)
 
-      }
+            for (let index = 0; index < randomCountdown; index++) {
+                console.log(index);
+                setTimeout(() => {
+                    document.getElementById('countdown').innerHTML = index
+                }, (randomCountdown - 1 - index) * 1000);
+            }
+            setTimeout(() => {
+                var buttonTime = Date.now()
+                if (myTime) {
+                    console.log('came her');
 
-      setTimeout(() => {
-        if (myTime == undefined) {
-          document.getElementById('target').innerHTML = "Too Slow"
+                    document.getElementById('target').innerHTML = 'Time was ' + (buttonTime - myTime)
+                } else {
+                    console.log('came else');
 
-        } else {
-          let currentTime = Date.now()
-          let difference = Math.abs(currentTime - myTime)
-          document.getElementById('target').innerHTML = "Time was " + difference
+                    document.getElementById('target').innerHTML = 'Too Slow'
+                }
+            }, (randomCountdown - 1) * 1000)
         }
-
-      }, 3000)
-    }
   </script>
 
 </body>

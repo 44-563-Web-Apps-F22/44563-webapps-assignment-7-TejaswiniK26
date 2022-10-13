@@ -9,8 +9,7 @@
 			background-color: red;
 		}
 
-		.flex-container>div {
-			/div children of the flex container/
+		.flex-container {
 			background-color: #f1f1f1;
 			margin: 10px;
 			padding: 20px;
@@ -75,14 +74,20 @@
 	}
 
 	function swap() {
-		 let firstNum = Math.floor(Math.random() * document.getElementsByClassName('cycler'))
-		 let secondNum = Math.floor(Math.random() * document.getElementsByClassName('cycler'))
-		 if (document.getElementsByClassName('cycler').length > 1) {
-		    let temp = document.getElementsByClassName("cycler")[firstNum].innerHTML
-			document.getElementsByClassName("cycler")[firstNum].innerHTML = document.getElementsByClassName
-			document.getElementsByClassName("cycler")[secondNum].innerHTML = temp
-		}	
-	}
+        let container = document.getElementById('target')
+        var cyclerItems = document.getElementsByClassName('cycler')
+        rand1 = getRandomInt(0, cyclerItems.length)
+        rand2 = getRandomInt(0, cyclerItems.length)
+        document.getElementById('swap').innerHTML = "Swapping " + (rand1 + 1) + " with " + (rand2 + 1)
+        if (rand1 != rand2 && cyclerItems.length > 1) {
+            console.log(rand1 + ' , ' + rand2);
+            var FirstElement = cyclerItems[rand1]
+            var SecoundElement = cyclerItems[rand2]
+            container.insertBefore(SecoundElement, cyclerItems[rand1]);
+            container.insertBefore(FirstElement, cyclerItems[rand2 + 1]);
+        }
+
+    }
 </script>
 
 </html>
